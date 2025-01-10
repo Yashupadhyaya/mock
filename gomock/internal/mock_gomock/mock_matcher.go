@@ -7,12 +7,12 @@ package mock_gomock
 import (
 	reflect "reflect"
 
-	gomock "github.com/golang/mock/gomock"
+	go_mock "github.com/golang/mock/gomock"
 )
 
 // MockMatcher is a mock of Matcher interface.
 type MockMatcher struct {
-	ctrl     *gomock.Controller
+	ctrl     *go_mock.Controller
 	recorder *MockMatcherMockRecorder
 }
 
@@ -22,7 +22,7 @@ type MockMatcherMockRecorder struct {
 }
 
 // NewMockMatcher creates a new mock instance.
-func NewMockMatcher(ctrl *gomock.Controller) *MockMatcher {
+func NewMockMatcher(ctrl *go_mock.Controller) *MockMatcher {
 	mock := &MockMatcher{ctrl: ctrl}
 	mock.recorder = &MockMatcherMockRecorder{mock}
 	return mock
@@ -42,7 +42,7 @@ func (m *MockMatcher) Matches(arg0 interface{}) bool {
 }
 
 // Matches indicates an expected call of Matches.
-func (mr *MockMatcherMockRecorder) Matches(arg0 interface{}) *gomock.Call {
+func (mr *MockMatcherMockRecorder) Matches(arg0 interface{}) *go_mock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Matches", reflect.TypeOf((*MockMatcher)(nil).Matches), arg0)
 }
@@ -56,7 +56,7 @@ func (m *MockMatcher) String() string {
 }
 
 // String indicates an expected call of String.
-func (mr *MockMatcherMockRecorder) String() *gomock.Call {
+func (mr *MockMatcherMockRecorder) String() *go_mock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "String", reflect.TypeOf((*MockMatcher)(nil).String))
 }
