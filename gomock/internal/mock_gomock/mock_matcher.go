@@ -27,11 +27,6 @@ func NewMockMatcher(ctrl *go_mock.Controller) *MockMatcher {
 	mock.recorder = &MockMatcherMockRecorder{mock}
 	return mock
 }
-func OldMockMatcher(ctrl *go_mock.Controller) *MockMatcher {
-	mock := &MockMatcher{ctrl: ctrl}
-	mock.recorder = &MockMatcherMockRecorder{mock}
-	return mock
-}
 
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *MockMatcher) EXPECT() *MockMatcherMockRecorder {
