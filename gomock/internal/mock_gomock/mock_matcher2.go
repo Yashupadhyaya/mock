@@ -9,4 +9,3 @@ func OldMockMatcher(ctrl *gomock.Controller) *MockMatcher {
 	mock.recorder = &MockMatcherMockRecorder{mock}
 	return mock
 }
-g
